@@ -1,12 +1,9 @@
 #!/bin/bash
-PROMPT_VERSION=llava_v1
-# DATA_ROOT=./playground/data
-model_size=7b
 
 deepspeed --master_port 12347 llava/train/train_mem.py \
     --deepspeed ./scripts/zero2.json \
     --model_name_or_path model_weights \
-    --version $PROMPT_VERSION \
+    --version llava_v1 \
     --data_path jsons/hand_made.json \
     --image_folder training_dataset/ \
     --vision_tower clip_4layers_336 \
@@ -17,11 +14,11 @@ deepspeed --master_port 12347 llava/train/train_mem.py \
     --image_aspect_ratio pad \
     --bf16 True \
     --output_dir ./checkpoints \
-    --num_train_epochs 10 \
-    --per_device_train_batch_size 8 \
-    --per_device_eval_batch_size 4 \
+    --num_train_epochs 300 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 1 \
-    --save_epochs 10 \
+    --save_epochs 50 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
     --save_steps 500000 \

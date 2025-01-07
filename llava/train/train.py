@@ -36,7 +36,6 @@ from llava.model import *
 from llava.mm_utils import tokenizer_image_token
 
 from PIL import Image
-from llava.visual_prompt_organizer import vip_processor, visual_prompt_config
 import wandb
 
 local_rank = None
