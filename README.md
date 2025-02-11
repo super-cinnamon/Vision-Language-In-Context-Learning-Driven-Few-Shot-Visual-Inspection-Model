@@ -1,4 +1,4 @@
-#  Vision-Language-In-Context-Learning-Driven-Few-Shot-Visual-Inspection-Model
+#  Vision-Language-In-Context-Learning-Driven-Few-Shot-Visual-Inspection-Model (VISAPP 2025)
 
 ## Contents
 - [Setup](#Setup)
@@ -12,7 +12,7 @@
 1. preprocess
 ```bash
 sudo apt install g++
-git clone https://github.com/anonym-rgb/Vision-Language-In-Context-Learning-driven-Few-Shot-Visual-Inspection-Model
+git clone https://github.com/ia-gu/Vision-Language-In-Context-Learning-driven-Few-Shot-Visual-Inspection-Model
 cd Vision-Language-In-Context-Learning-driven-Few-Shot-Visual-Inspection-Model
 ```
 
@@ -49,14 +49,14 @@ Our base model is [ViP-LLaVA](https://github.com/WisconsinAIVision/ViP-LLaVA), a
 
 Cited by [ViP-LLaVA](https://github.com/WisconsinAIVision/ViP-LLaVA).
 
-Our additional fine-tuning is on 4 A100 GPUs with 80GB memory, and evaluate on 4 6000 Ada GPUs with 48GB memory
+Our additional fine-tuning and evaluation are on 8*RTX6000Ada GPUs with 48GB memory
 
 ### Hyperparameters
 Hyperparameters used fine-tuning are provided below.
 
-| Hyperparameter | Global Batch Size | Learning rate | Epochs | Max length | Weight decay |
+| Hyperparameter | Global Batch Size | Learning rate | Epochs | Weight decay |
 | --- | ---: | ---: | ---: | ---: | ---: |
-|    | 32 | 2e-5 | 10 | 3500 | 0 |
+|    | 32 | 1e-4 | 300 | 0 |
 
 ## Evaluation
 We evaluate our model on three dataset, [MVTec-AD](https://www.mvtec.com/company/research/datasets/mvtec-ad) and [VisA](https://github.com/amazon-science/spot-diff). 
@@ -65,6 +65,20 @@ Use ```predict_*.py``` for evaluation and ```calcurate_result_*.ipynb``` for get
 Also, use ```prepare_*.ipynb``` to prepare prompts for each dataset.
 
 
+## Citation
+
+```bibtex
+
+@inproceedings{VisionLanguageInContextLearningDrivenFewShotVisualInspectionModel,
+  author      = {Ueno, S.; Hayashi, Y.; Nakatsuka, S.; Yamada, Y.; Aizawa, H. and Kato, K},
+  title       = {Vision-Language In-Context Learning Driven Few-Shot Visual Inspection Model},
+  booktitle   = {20th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications},
+  year      = {2025},
+  pages     = {253--260},
+  isbn      = {978-989-758-728-3},
+  issn      = {2184-4321}
+}
+```
 
 ## Acknowledgement
 
@@ -72,3 +86,4 @@ Also, use ```prepare_*.ipynb``` to prepare prompts for each dataset.
 
 ## Caution
 **Usage and License Notices**: All of the contents here is intended and licensed for research use only. Also, please follow the license agreement of ViP-LLaVA, LLaMA, Vicuna and GPT-4.
+
