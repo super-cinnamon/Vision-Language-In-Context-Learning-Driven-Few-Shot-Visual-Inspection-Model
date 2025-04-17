@@ -26,6 +26,7 @@ from typing import Dict, Optional, Sequence, List
 import torch
 
 import transformers
+from llava.model.multimodal_encoder.clip_4layer_encoder import CLIPVisionTowerMultilayer
 
 from llava.constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN
 from torch.utils.data import Dataset
