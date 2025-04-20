@@ -14,11 +14,11 @@ deepspeed --master_port 12347 llava/train/train_mem.py \
     --image_aspect_ratio pad \
     --bf16 True \
     --output_dir ./checkpoints \
-    --num_train_epochs 300 \
+    --num_train_epochs 1 \
     --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 1 \
-    --save_epochs 50 \
+    --save_epochs 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
     --save_steps 500000 \

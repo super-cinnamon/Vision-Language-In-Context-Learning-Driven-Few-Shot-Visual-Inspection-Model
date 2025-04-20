@@ -7,7 +7,7 @@
 
 #replace_llama_attn_with_flash_attn()
 import sys
-sys.path.append("/kaggle/working/Vision-Language-In-Context-Learning-driven-Few-Shot-Visual-Inspection-Model")
+sys.path.append("/kaggle/working/Vision-Language-In-Context-Learning-Driven-Few-Shot-Visual-Inspection-Model")
 
 from llava.train.train import train
 
